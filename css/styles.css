@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+body {
+    margin: 0%;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--veryLightGrayishBlue);
+}
+:root {
+    --veryLightGray: hsl(0, 0%, 98%);
+    --veryLightGrayishBlue: hsl(236, 33%, 92%);
+    --lightGrayishBlue: hsl(233, 11%, 84%);
+    --darkGrayishBlue: hsl(236, 9%, 61%);
+    --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+    --brightBlue: hsl(220, 98%, 61%);
+    --check-background: linear-gradient(#57ddff, #c058f3);
+}
+
+.principal-div {
+    background: url('../images/bg-mobile-light.jpg') no-repeat;
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title{
+    width: 320px;
+    margin: 0;
+    height: 0;
+    padding: 30px 0 0 0;
+}
+
+.title h1 {
+    margin: 0;
+    padding: 0;
+    color: var(--veryLightGray);
+    letter-spacing: 10px;
+}
+
+.note-add input {
+    width: 320px;
+    height: 50px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px white;
+    box-shadow: 2px 2px var(--lightGrayishBlue);
+}
+.note-add input::placeholder {
+    color: var(--darkGrayishBlue);
+    font-weight: 400;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    padding: 0px 50px;
+}
+
+.notes-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -30px;
+    box-shadow: 1px 1px var(--lightGrayishBlue);
+}
+
+.notes {
+    display: flex;
+    align-items: center;
+    width: 320px;
+    height: 50px;
+    background-color: var(--veryLightGray);
+    border-radius: 5px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--lightGrayishBlue);
+}
+
+.icon-check {
+    border: 2px solid var(--lightGrayishBlue);
+    padding: 5px;
+    margin: 0 15px;
+    border-radius: 50%;
+}
+
+.icon-check:hover {
+    background: var(--check-background);
+}
+
+.icon-cross { 
+    margin: 0 15px;
+}
+
+.time-ago {
+    display: flex;
+    align-items: center;
+    width: 320px;
+    height: 50px;
+    font-size: 14px;
+    background-color: var(--veryLightGray);
+    border-radius: 5px;
+    justify-content: space-between;
+    color: var(--darkGrayishBlue);
+    font-weight: 400;
+}
+
+.time-ago p {
+    padding: 0 20px;
+}
+
+.selector {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.selector div {
+    display: flex;
+    align-items: center;
+    width: 320px;
+    height: 50px;
+    font-size: 14px;
+    background-color: var(--veryLightGray);
+    border-radius: 5px;
+    justify-content: center;
+    color: var(--veryDarkGrayishBlue);
+    font-weight: 700;
+    list-style: none;
+}
+
+.selector div li {
+    margin: 0 10px;
+}
+
+.selector div li:active {
+    color: var(--brightBlue);
+}
+
+.drop {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.drop div{
+    display: flex;
+    align-items: center;
+    width: 320px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 5px;
+    justify-content: center;
+    color: var(--veryDarkGrayishBlue);
+    font-weight: 700;
+    list-style: none;
+}
+
+@media screen and (min-width: 480px) {
+    .principal-div {
+        background: url('../images/bg-desktop-light.jpg') no-repeat;
+        background-size: cover;
+        height: 310px;
+        display: grid;
+    }
+    .title {
+        padding: 80px 0 0 0;
+        font-size: 20px;
+    }
+    .notes-card {
+        display: block;
+        margin: -50px 0;
+    }
+    .section-2 {
+        display: flex;
+        justify-content: center;
+    }
+    .note-add input {
+        width: 600px;
+    }
+    .notes {
+        width: 600px;
+    }
+    .time-ago {
+        width: 600px;
+    }
+    .selector div {
+        margin: -30px 0 0 0;
+    }
+}
