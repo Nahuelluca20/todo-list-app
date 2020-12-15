@@ -12,10 +12,13 @@ body {
     --veryDarkGrayishBlue: hsl(235, 19%, 35%);
     --brightBlue: hsl(220, 98%, 61%);
     --check-background: linear-gradient(#57ddff, #c058f3);
+    --textcard: hsl(235, 19%, 35%);
+    --bgImagemobile: url('../images/bg-mobile-light.jpg');
+    --bgImageDesktop: url('../images/bg-desktop-light.jpg');
 }
 
 .principal-div {
-    background: url('../images/bg-mobile-light.jpg') no-repeat;
+    background: var(--bgImagemobile) no-repeat;
     background-size: cover;
     height: 200px;
     display: flex;
@@ -28,6 +31,8 @@ body {
     margin: 0;
     height: 0;
     padding: 30px 0 0 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .title h1 {
@@ -43,7 +48,7 @@ body {
     outline: none;
     border-radius: 5px;
     border: 1px white;
-    box-shadow: 2px 2px var(--lightGrayishBlue);
+    background-color: var(--veryLightGray);
 }
 .note-add input::placeholder {
     color: var(--darkGrayishBlue);
@@ -70,6 +75,8 @@ body {
     border-radius: 5px;
     justify-content: space-between;
     border-bottom: 1px solid var(--lightGrayishBlue);
+    color: var(--textcard);
+    font-weight: 400;
 }
 
 .icon-check {
@@ -150,15 +157,20 @@ body {
     font-weight: 700;
     list-style: none;
 }
+.checkbox {
+    display: none;
+    cursor: pointer;
+}
 
 @media screen and (min-width: 480px) {
     .principal-div {
-        background: url('../images/bg-desktop-light.jpg') no-repeat;
-        background-size: cover;
         height: 310px;
+        background: var(--bgImageDesktop);
+        background-size: cover;
         display: grid;
     }
     .title {
+        width: 600px;
         padding: 80px 0 0 0;
         font-size: 20px;
     }
@@ -183,3 +195,31 @@ body {
         margin: -30px 0 0 0;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --veryLightGrayishBlue: hsl(235, 21%, 11%);
+        --lightGrayishBlue: hsl(233, 14%, 35%);
+        --veryLightGray: hsl(235, 24%, 19%);
+        --textcard: hsl(234, 39%, 85%);
+        --bgImagemobile: url('../images/bg-mobile-dark.jpg');
+        --bgImageDesktop: url('../images/bg-desktop-dark.jpg');
+    }
+}
+
+.is-dark-mode {
+    --veryLightGrayishBlue: hsl(235, 21%, 11%);
+    --lightGrayishBlue: hsl(233, 14%, 35%);
+    --veryLightGray: hsl(235, 24%, 19%);
+    --textcard: hsl(234, 39%, 85%);
+    --bgImagemobile: url('../images/bg-mobile-dark.jpg');
+    --bgImageDesktop: url('../images/bg-desktop-dark.jpg');
+}
+
+.is-light-mode {
+    --veryLightGrayishBlue: hsl(236, 33%, 92%);
+    --lightGrayishBlue: hsl(233, 11%, 84%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --textcard: hsl(235, 19%, 35%);
+}
+
