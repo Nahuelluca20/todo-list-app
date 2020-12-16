@@ -57,6 +57,9 @@ body {
     font-size: 11px;
     padding: 0px 50px;
 }
+.btn {
+    display: none;
+}
 
 .notes-card {
     display: flex;
@@ -86,8 +89,11 @@ body {
     border-radius: 50%;
 }
 
-.icon-check:hover {
+.icon-checked {
     background: var(--check-background);
+}
+.text-checked {
+    text-decoration: line-through;
 }
 
 .icon-cross { 
@@ -161,6 +167,10 @@ body {
     display: none;
     cursor: pointer;
 }
+.attribution {
+    text-align: center;
+    margin: 30px;
+}
 
 @media screen and (min-width: 480px) {
     .principal-div {
@@ -221,5 +231,7 @@ body {
     --lightGrayishBlue: hsl(233, 11%, 84%);
     --veryLightGray: hsl(0, 0%, 98%);
     --textcard: hsl(235, 19%, 35%);
+    --bgImagemobile: url('../images/bg-mobile-light.jpg');
+    --bgImageDesktop: url('../images/bg-desktop-light.jpg');
 }
 

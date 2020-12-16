@@ -4,7 +4,6 @@ const check = document.getElementById('mode')
 
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     check.setAttribute('checked', true)
-    console.log(check)
 }
 
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -28,3 +27,44 @@ check.addEventListener('change', function(event) {
         icon.src = './images/icon-moon.svg'
     }
 })
+
+/*TODO funcions*/
+
+const input = document.getElementById('input-text')
+const addnoteP = document.getElementById('notesID')
+const noteCards = document.getElementById('notes-card')
+const cleanInput = ""
+input.addEventListener('keyup', addNote)
+
+function addNote(event) {
+    if (event.keyCode === 13) {
+        document.getElementById("myBtn").click();
+        const divElement = document.createElement('div')
+        divElement.classList.add('notes')
+        noteCards.appendChild(divElement)
+
+        const imgCheck = document.createElement('img')
+        imgCheck.classList.add('icon-check')
+        imgCheck.src = './images/icon-check.svg'
+        divElement.appendChild(imgCheck)
+
+        const noteText = document.createElement('p')
+        noteText.innerText = input.value
+        divElement.appendChild(noteText)
+
+        const imgCross = document.createElement('img')
+        imgCross.classList.add('icon-cross')
+        imgCross.src = './images/icon-cross.svg'
+        divElement.appendChild(imgCross)
+
+        imgCross.addEventListener('click', function() {
+            noteCards.removeChild(divElement)
+        })
+
+        imgCheck.addEventListener('click', function() {
+            imgCheck.classList.add('icon-checked')
+            noteText.classList.add('text-checked')
+        })
+        input.value = ''
+    }
+}
