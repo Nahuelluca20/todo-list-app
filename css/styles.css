@@ -49,6 +49,7 @@ body {
     border-radius: 5px;
     border: 1px white;
     background-color: var(--veryLightGray);
+    color: var(--darkGrayishBlue);
 }
 .note-add input::placeholder {
     color: var(--darkGrayishBlue);
@@ -93,7 +94,17 @@ body {
     background: var(--check-background);
 }
 .text-checked {
-    text-decoration: line-through;
+    position: relative;
+    display: inline-block;
+    color: var(--lightGrayishBlue   );
+}
+.text-checked::before {
+    content: '';
+    border-bottom: 2px solid var(--lightGrayishBlue);
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
 }
 
 .icon-cross { 
@@ -170,6 +181,7 @@ body {
 .attribution {
     text-align: center;
     margin: 30px;
+    color: var(--veryDarkGrayishBlue);
 }
 
 @media screen and (min-width: 480px) {

@@ -33,7 +33,9 @@ check.addEventListener('change', function(event) {
 const input = document.getElementById('input-text')
 const addnoteP = document.getElementById('notesID')
 const noteCards = document.getElementById('notes-card')
-const cleanInput = ""
+const timeAgo = document.getElementById('time-ago')
+const clear = document.getElementById('clear-completed')
+var counter = 0
 input.addEventListener('keyup', addNote)
 
 function addNote(event) {
@@ -59,12 +61,26 @@ function addNote(event) {
 
         imgCross.addEventListener('click', function() {
             noteCards.removeChild(divElement)
+            timeAgo.innerText = --counter + ' items left'
         })
 
         imgCheck.addEventListener('click', function() {
             imgCheck.classList.add('icon-checked')
             noteText.classList.add('text-checked')
+            divElement.classList.add('check')
         })
+        
+        timeAgo.innerText = ++counter + ' items left'
+
         input.value = ''
     }
 }
+
+clear.addEventListener('click', function() {
+    const clearDiv = document.getElementsByClassName('check')
+    const countDiv = clearDiv.length
+    while(countDiv > 0) {
+        clearDiv[0].parentNode.removeChild(clearDiv[0]);
+        timeAgo.innerText = --counter + ' items left'
+    }
+})
